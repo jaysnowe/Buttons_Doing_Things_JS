@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* overrides the browser default */
+        html,
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            /* stretches the body over the whole page */
+            height: 100vh;
+            width: 100vw;
+            background: url(pexels-henry-&-co-1939485.jpg) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            position: relative;
+        }
+        #original-display{
+            position: absolute;
+            top: 40%;
+            width: 70%;
+            margin-left: 15%;
+            margin-right: 15%;
+            text-align: center;
+        }
+        #appearing-text{
+            /* align-items: flex-end;
+            justify-content: flex-end; */
+            background-color: rgb(14, 153, 245);
+            border: 1px solid white;
+            color: white;
+            position: absolute;
+            bottom: 0%;
+            right: 0%;
+            margin: 20px;
+            padding: 20px;
+            display: none;
+        }
+    </style>
+    <title>A Study in Buttons: Text to Div</title>
+</head>
+<body>
+    <div class="container">
+        <div id="original-display">
+            <h1>Button Will Take Text From Prompt and Place in Div</h1>
+            <button>Click Me!</button>
+        </div>
+        <div id="appearing-text"></div>
+    </div>
+</body>
+<script>
+    //locate a thing & select it
+    const found_button = document.querySelector('button');
+    //create an event & connect selected thing to declared function on a click
+    found_button.addEventListener('click', MoveText)
+    //locate destination of text
+    const destination = document.getElementById("appearing-text");
+    //declare a f(x) to grab text from prompt & copy over to div 
+    function MoveText(){
+        let userInput = prompt('Type Your Text Here');
+        destination.innerText = userInput;
+        document.getElementById("appearing-text").style.display = "block";
+    }
+</script>
+</html>
