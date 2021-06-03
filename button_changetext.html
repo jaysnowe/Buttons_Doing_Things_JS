@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        button{
+            background-color: #333;
+            color: white;
+            border-radius: 50%;
+            padding: 20px 20px 20px 20px;
+        }
+    </style>
+    <title>A Study in Buttons</title>
+</head>
+<body>
+    <h1>Button Will Change Text</h1>
+    <button id="btn-text-change">Click to Change Me:</button>
+</body>
+<script>
+    const btn_tch = document.getElementById("btn-text-change");
+
+    btn_tch.addEventListener('click', updateText);
+
+    function updateText(){
+        let new_text = prompt("Enter new text");
+        btn_tch.textContent = "Your words: " + new_text;
+    }
+</script>
+</html>
